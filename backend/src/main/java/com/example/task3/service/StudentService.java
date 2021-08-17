@@ -20,6 +20,7 @@ public class StudentService {
      public void addStudent(Student student){
          studentRepository.save(student);
      }
+
      public List<Student> getStudents (){
         List<Student> list= studentRepository.findAll();
         return list;

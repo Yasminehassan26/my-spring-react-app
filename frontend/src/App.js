@@ -9,12 +9,11 @@ function App() {
     <div className="App">
       <Switch>
       <Route exact path="/" component={HomePage}/>
-      <Route path="/showlist" component={ListPage}/>
+      <Route path="/ShowList" component={ListPage}/>
 
       </Switch>
     </div>
     </Router>
   );
 }
-
 export default App;
