@@ -10,7 +10,7 @@ function ListPage() {
     useEffect(()=>{
     const getList=async()=>{
     const res=await fetch (
-      `http://localhost:8080/1`
+      `http://localhost:8080/getStudents/1`
     );
     const data =await res.json();
     setItems(data);
@@ -20,7 +20,7 @@ function ListPage() {
   
     const fetchList=async()=>{
       const res=await fetch (
-        `http://localhost:8080/${page}`
+        `http://localhost:8080/getStudents/${page}`
       );
       const data =await res.json();
       return data;     
@@ -29,7 +29,7 @@ function ListPage() {
     const fetchData=async()=>{
      const ListElements =await fetchList();
      setItems([...items,...ListElements])
-     if (ListElements.length === 0 || ListElements.length < 20) {
+     if (ListElements.length === 0 || ListElements.length<20 ) {
       setLoading(false);  
     }
     setPage(page+1);
@@ -47,7 +47,10 @@ function ListPage() {
         }
         >
           {items.map((item) => {
+          
             return <Elements key={item.id} item={item} />;
+          
+            
           })}
                  
       </InfiniteScroll>

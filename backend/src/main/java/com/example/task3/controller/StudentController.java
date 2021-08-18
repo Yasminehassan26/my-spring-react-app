@@ -30,8 +30,9 @@ public class StudentController {
         studentService.addStudent(student);
 
     }
-    @GetMapping("/getStudents")
-    public List<Student> getStudents() {
-        return studentService.getStudents();
+  
+    @GetMapping("/getStudents/{pageNumber}")
+    public List<Student> getStudents(@PathVariable (name="pageNumber") Integer pageNumber) {
+        return studentService.getStudents(pageNumber);
     }
 }
