@@ -11,7 +11,7 @@ function HomePage() {
       return (
         <div className="main">
             <h1>Hi Everyone</h1>
-        <button className="button" onClick={redirect}>Show the List</button>
+        <button role ="buttons" className="button" onClick={redirect}>Show the List</button>
        </div>
     );
 
